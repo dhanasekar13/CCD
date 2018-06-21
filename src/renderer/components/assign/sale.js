@@ -1,7 +1,7 @@
 import { enquiryProject, enquiryTrading } from '@/components/database/validate'
 var fs = require('fs-extra')
-var sourcefiledir = 'H:/ccd_technologies/template'
-var destinationdir = 'H:/ccd_technologies/project/'
+var sourcefiledir = 'F:/folder/template'
+var destinationdir = 'F:/a/'
 var multer = require('multer')
 function createDir (data, file) {
   return new Promise(function (resolve, reject) {

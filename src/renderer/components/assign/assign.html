@@ -2,10 +2,11 @@
 <div>
 <div id="form" >
   <form v-on:submit.prevent="onSubmit"  class="container">
-  <p style="align-items:center;justify-content:center;display:flex"><b>FORM1 ENQUIRY HANDLING</b></p>
+  <p style="margin:1%;align-items:center;justify-content:center;display:flex"><b>FORM1 ENQUIRY HANDLING</b></p>
+<hr>
     <div class='row'>
      <div class="col-25">
-    <label>Mode of Enquiry</label>
+    <label><strong>Mode of Enquiry</strong></label>
   </div>
   <div class="col-75">
     <select v-model="full.mode">
@@ -16,7 +17,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-    <label>Client Type</label>
+    <label><strong>Client Type</strong></label>
   </div>
   <div class="col-75">
   <select v-model="full.cust">
@@ -27,7 +28,7 @@
   </div>
   <div class="row" >
     <div class="col-25">
-    <label>Client Name</label>
+    <label><strong>Client Name</strong></label>
   </div>
   <div class="col-75" >
     <input type="text" name="" v-model="full.cname" v-if="full.cust==0">
@@ -38,13 +39,17 @@
     </div>
   </div>
 </div>
-<div>
-  <label>PROJECT detail</label>
+<div class="row">
+  <div class="col-25">
+  <label><strong>PROJECT detail</strong></label>
+</div>
+<div class='col-75'>
   <input type="text" v-model="full.detail">
+</div>
 </div>
 <div class="row">
   <div class="col-25">
-  <label>Project Type</label>
+  <label><strong>Project Type</strong></label>
 </div>
 <div class="col-75">
 <select v-model="ptype">
@@ -55,23 +60,23 @@
 </div>
 <div class="row">
   <div class="col-25">
-  <label>Offer Number</label>
+  <label><strong>Offer Number</strong></label>
 </div>
   <div class="col-75">
     <input type="text" readonly v-model="full.offerno">
   </div>
 </div>
-<div>
+<div class='row'>
   <div class="col-25">
-  <label>REVISION Number</label>
+  <label><strong>REVISION Number</strong></label>
 </div>
-  <div class="col-36">
+  <div class="col-75">
     <input type="text" readonly v-model="full.revno">
   </div>
 </div>
   <div class="row">
     <div class="col-25">
-    <label>Due Date</label>
+    <label><strong>Due Date</strong></label>
   </div>
   <div class="col-75">
     <input type="date" name="pass" id="pass" v-model="full.date1"><br><br>
@@ -79,7 +84,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-    <label>Assign Engineer</label>
+    <label><strong>Assign Engineer</strong></label>
   </div>
   <div class="col-75" >
       <select v-model="full.uname">
@@ -90,7 +95,7 @@
 </div>
   <div class="row">
     <div class="col-25">
-    <label>Follow up Frequency</label>
+    <label><strong>Follow up Frequency</strong></label>
   </div>
   <div class="col-75">
     <select v-model="full.follow">
@@ -101,18 +106,40 @@
     </select><br>
   </div>
 </div>
-<div>
-  <label><strong>file for Client Correspondence</strong></label>
-<input type="file" id="client">
-<label><strong>BOQ</strong></label>
-<input type="file" id="boq">
-<label><strong>VENDOR QUOTE</strong></label>
-<input id="vendor" type="file">
+<hr>
+<label style="margin-left:40%"><strong>FILE UPLOAD</strong></label>
+  <div class='row'>
+    <div class='col-25'>
+  <label><strong>Client Correspondence</strong></label>
 </div>
-<input type="submit" class="col-50" name="button" value="Assign Enquiry" v-on:click.prevent="assign()">
+<div class='col-75'>
+<input type="file" id="client">
+</div>
+</div>
 
+<div class='row'>
+  <div class='col-25'>
+<label><strong>BOQ</strong></label>
+</div>
+<div class='col-75'>
+<input type="file" id="boq">
+</div>
+</div>
+<div class='row'>
+  <div class='col-25'>
+<label><strong>VENDOR QUOTE</strong></label>
+</div>
+<div class='col-75'>
+<input type="file">
+</div>
+</div>
+<hr>
+<div id="last">
+  <div>
+<input type="submit" class="col-50" name="button" id='btn10' value="Assign Enquiry" v-on:click.prevent="assign()">
+</div><div>
     <input type="submit"  class="col-50" name="button" id="btn3" style="background:red" value="Regret Message" v-on:click="think()">
-
+</div></div>
 </form>
 <!--
 <input type="submit"  class="col-30" name="button" id="btn8" style="background:red" value="open a file" v-on:click="think1()">

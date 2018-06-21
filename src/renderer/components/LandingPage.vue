@@ -1,15 +1,30 @@
 <template>
+<div id="all">
+  <div id="one" align="center">
+<p align='center'><strong>CCD TECHNICAL SALES APPLICATION</strong></p>
+  </div>
   <div id="wrapper">
   <form>
-
-    <label><strong>Employee Id</strong></label>
-    <input type="text" v-model="id"><br>
-    <label><strong>Password</strong></label>
-    <input type="password" v-model="pass"><br>
-    <label><strong>Period</strong></label>
-    <input type="text" v-model="period"><br>
-    <input type="submit" value="submit" v-on:click="submit()">
+  <div class="two">
+    <div><label><strong>Employee Id   -   :</strong></label></div>
+    <div><input type="text" v-model="id"><br></div>
+  </div>
+<br>
+  <div class="two">
+    <div><label><strong>Password   -  :</strong></label></div>
+    <div><input type="password" v-model="pass"></div><br>
+    </div>
+    <br>
+    <div class="two">
+    <div><label><strong>Period    -   :</strong></label></div>
+    <div><input type="text" v-model="period"></div><br>
+    </div>
+    <br><br>
+    <div class="two">
+    <input type="submit" value="................................................SUBMIT..............................................." v-on:click="submit()">
+    </div>
   </form>
+  </div>
   </div>
 </template>
 
@@ -46,3 +61,27 @@ export default {
   }
 }
 </script>
+<style>
+#one {
+margin:2%;
+width:100%;
+display:inline-block
+}
+#all {
+  width:70%;
+  height:50%;
+  background:lightgrey;
+  margin:12%;
+}
+.two div {
+width:40%;
+display:inline-block;
+margin:1%
+}
+div input {
+width:100%
+}
+label {
+margin:5%
+}
+</style>

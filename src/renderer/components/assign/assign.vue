@@ -1,5 +1,8 @@
 <template src="./assign.html">
 </template>
+
+<style src='./assign.css'>
+</style>
 <script>
 import { customer, user, insertRecord } from '@/components/database/validate'
 import { createDir, type } from './sale'

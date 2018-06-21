@@ -1,3 +1,2 @@
-<template>
-<p> this is regsiter page</p>
+<template src='./register.html'>
 </template>

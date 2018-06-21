@@ -1,0 +1,32 @@
+
+#form {
+  width:80%;
+  margin-left:8%;
+  background:lightblue
+}
+.row {
+  width:90%
+}
+.col-75 {
+  width:50%;
+  display:inline-block
+}
+.col-25 {
+  width:40%;
+  margin:1%;
+  display:inline-block
+}
+.col-75 input, .col-75 select {
+  width:95%
+}
+#last div {
+  width:50%;
+  display:inline-block;
+}
+#last div input {
+  width:100%
+}
+#btn10 {
+  background:green;
+  border:1%
+}
