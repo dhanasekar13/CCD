@@ -1,0 +1,121 @@
+
+<div>
+<div id="form" >
+  <form v-on:submit.prevent="onSubmit"  class="container">
+  <p style="align-items:center;justify-content:center;display:flex"><b>FORM1 ENQUIRY HANDLING</b></p>
+    <div class='row'>
+     <div class="col-25">
+    <label>Mode of Enquiry</label>
+  </div>
+  <div class="col-75">
+    <select v-model="full.mode">
+      <option value="Tender">TENDER</option>
+      <option value="Project">PROJECT</option>
+    </select><br>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+    <label>Client Type</label>
+  </div>
+  <div class="col-75">
+  <select v-model="full.cust">
+    <option value=0>NEW</option>
+    <option value=1>EXISTING</option>
+  </select><br>
+  </div>
+  </div>
+  <div class="row" >
+    <div class="col-25">
+    <label>Client Name</label>
+  </div>
+  <div class="col-75" >
+    <input type="text" name="" v-model="full.cname" v-if="full.cust==0">
+    <div class="" v-if="full.cust==1">
+      <select v-model="full.cname">
+          <option v-for="custom in full.customerObj" v-bind:value="custom.Cname">{{custom.Cname}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div>
+  <label>PROJECT detail</label>
+  <input type="text" v-model="full.detail">
+</div>
+<div class="row">
+  <div class="col-25">
+  <label>Project Type</label>
+</div>
+<div class="col-75">
+<select v-model="ptype">
+  <option value='S'>Trading</option>
+  <option value='P'>project</option>
+</select><br>
+</div>
+</div>
+<div class="row">
+  <div class="col-25">
+  <label>Offer Number</label>
+</div>
+  <div class="col-75">
+    <input type="text" readonly v-model="full.offerno">
+  </div>
+</div>
+<div>
+  <div class="col-25">
+  <label>REVISION Number</label>
+</div>
+  <div class="col-36">
+    <input type="text" readonly v-model="full.revno">
+  </div>
+</div>
+  <div class="row">
+    <div class="col-25">
+    <label>Due Date</label>
+  </div>
+  <div class="col-75">
+    <input type="date" name="pass" id="pass" v-model="full.date1"><br><br>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+    <label>Assign Engineer</label>
+  </div>
+  <div class="col-75" >
+      <select v-model="full.uname">
+          <option v-for="user in full.userObj" v-bind:value="user">{{user.Name}}</option>
+      </select>
+
+  </div>
+</div>
+  <div class="row">
+    <div class="col-25">
+    <label>Follow up Frequency</label>
+  </div>
+  <div class="col-75">
+    <select v-model="full.follow">
+      <option value="Twice a Day">Twice a Day</option>
+      <option value="Once a Day">Once a Day</option>
+      <option value="Twice a Week">Twice a Week</option>
+      <option value="Once a Week">Once a Week</option>
+    </select><br>
+  </div>
+</div>
+<div>
+  <label><strong>file for Client Correspondence</strong></label>
+<input type="file" id="client">
+<label><strong>BOQ</strong></label>
+<input type="file" id="boq">
+<label><strong>VENDOR QUOTE</strong></label>
+<input id="vendor" type="file">
+</div>
+<input type="submit" class="col-50" name="button" value="Assign Enquiry" v-on:click.prevent="assign()">
+
+    <input type="submit"  class="col-50" name="button" id="btn3" style="background:red" value="Regret Message" v-on:click="think()">
+
+</form>
+<!--
+<input type="submit"  class="col-30" name="button" id="btn8" style="background:red" value="open a file" v-on:click="think1()">
+-->
+</div>
+</div>
