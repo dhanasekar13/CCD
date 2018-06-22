@@ -1,0 +1,44 @@
+<div class="main">
+  <div class="container">
+  <div class="header">
+    <div class="">
+    </div>
+    <div class="">
+    <input type="text" name="query" v-model="searchQuery" value="" placeholder="search for any field">
+    </div>
+  </div><hr>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <th v-for="key in gridColumns" @click="sort(key)" >{{key}}</th>
+        </tr>
+      </thead>
+      <hr>
+    <tbody>
+        <tr v-for="rec in sortedCats">
+          <td >{{rec['mode']}}</td>
+          <td >{{rec['refno']}}</td>
+          <td >{{rec['revison']}}</td>
+          <td >{{rec['clientName']}}</td>
+          <td >{{rec['duedate']}}</td>
+          <td >{{rec['followup']}}</td>
+          <td >{{rec['assgnerId']}}</td>
+          <td >{{rec['assEngineerId']}}</td>
+          <button v-on:click="call(rec)" v-bind:value="hit(rec)" >{{currentrecord}}</button>
+        </tr>
+      </tbody>
+    </table>
+    <div align="center" id="page">
+    <p>
+<button @click="prevPage()">Previous</button>
+<button @click="nextPage()">Next</button>
+</p>
+debug : sort = {{ currentSort }} , dir = {{ currentSortDir }}
+  </div>
+</div>
+  <div class="footer">
+
+  </div>
+</div>
+  </div>

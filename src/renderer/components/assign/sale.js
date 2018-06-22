@@ -81,22 +81,31 @@ function createwin (dest, file11, file12, file13) {
     var file2 = dest + '/04. Vendor/01-BOM/' + h22
     var file3 = dest + '/04. Vendor/02-Pre Order Quotations/' + h33
     console.log('COPYING FILE_____')
-    ncp(h1, file1, function (err) {
+    resolve(ncp1(h1, file1, h2, file2, h3, file3))
+  })
+}
+function ncpfunt (arg, arg1) {
+  return new Promise(function (resolve, reject) {
+    ncp(arg, arg1, function (err) {
       if (err) {
         return console.log(err)
       }
+      resolve('okay')
     })
-    ncp(h2, file2, function (err) {
-      if (err) {
-        return console.log(err)
-      }
+  })
+}
+function ncp1 (h1, file1, h2, file2, h3, file3) {
+  return new Promise(function (resolve, reject) {
+    var first = ncpfunt(h1, file1)
+    first.then(function (data) {
+      var second = ncpfunt(h2, file2)
+      second.then(function (data) {
+        var third = ncpfunt(h3, file3)
+        third.then(function (data) {
+          resolve('uploaded successfully')
+        })
+      })
     })
-    ncp(h3, file3, function (err) {
-      if (err) {
-        return console.log(err)
-      }
-    })
-    resolve('yes file uploaded successfully')
   })
 }
 export {

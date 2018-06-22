@@ -95,7 +95,8 @@ export default {
           followup: current.full.follow,
           assgnerId: current.full.engineerId,
           assEngineerId: current.full.uname.empid,
-          refno: current.full.offerno
+          refno: current.full.offerno,
+          revison: current.full.revno
         }
         console.log(assignenquirytb)
         var insertedarenot1 = insertRecord('assignenquiry', assignenquirytb)
