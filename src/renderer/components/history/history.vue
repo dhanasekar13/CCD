@@ -47,6 +47,24 @@ export default {
     },
     call: function (data) {
       console.log(data)
+      var current = this
+      var query = 'SELECT * FROM `assignenquiry` a, `projectenquiryregsiter` p WHERE a.refno = ' + mysql.escape(data.refno) + ' and a.refno = p.RefNo'
+      console.log(query)
+      var values = queryExec(query)
+      values.then(function (data) {
+        console.log(data)
+        if (data.length === 1) {
+          current.createquote(data)
+        } else if (data.length > 1) {
+          current.createquote1(data)
+        }
+      })
+    },
+    createquote (data) {
+      console.log('created revisoin for 1 record ' + data[0].revison)
+    },
+    createquote1 (data) {
+      console.log('created revision for more record')
     },
     onload: function () {
       var current = this

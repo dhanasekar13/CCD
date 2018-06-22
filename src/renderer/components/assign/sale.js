@@ -60,7 +60,7 @@ function type (data) {
         var length = parseInt(val.substring(5, 8)) + 1
         if (length < 10) {
           length = '00' + length
-        } else if ((length > 100) && (length > 10)) {
+        } else if ((length < 100) && (length > 9)) {
           length = '0' + length
         }
         var final = record1 + length
