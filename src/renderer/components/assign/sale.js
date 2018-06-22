@@ -1,8 +1,9 @@
 import { enquiryProject, enquiryTrading } from '@/components/database/validate'
 var fs = require('fs-extra')
-var sourcefiledir = 'F:/folder/template'
-var destinationdir = 'F:/a/'
-var multer = require('multer')
+var fileUrl = require('file-url')
+var sourcefiledir = 'H:/ccd_technologies/template'
+var destinationdir = 'H:/ccd_technologies/project/'
+var ncp = require('ncp').ncp
 function createDir (data, file) {
   return new Promise(function (resolve, reject) {
     var year = ''
@@ -26,7 +27,10 @@ function createDir (data, file) {
     var fullname = destinationdir + year + '' + month + '' + date + '-' + type + '-' + cname + '-' + det
     console.log(fullname)
     fs.copySync(sourcefiledir, fullname)
-    resolve(createwin(fullname, file))
+    var g1 = file[0]
+    var g2 = file[1]
+    var g3 = file[2]
+    resolve(createwin(fullname, g1, g2, g3))
   })
 }
 function type (data) {
@@ -65,46 +69,35 @@ function type (data) {
     }
   })
 }
-function createwin (dest, file) {
-  console.log(dest)
-  console.log(file)
-  var file1 = dest + '/01. Client/01-Enquiry/'
-  var file2 = dest + '/04. Vendor/01-BOM'
-  var file3 = dest + '/04. Vendor/02-Pre Order Quotations'
-  var storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-      callback(null, file1)
-    }
+function createwin (dest, file11, file12, file13) {
+  return new Promise(function (resolve, reject) {
+    var h1 = fileUrl(file11).substring(8)
+    var h11 = h1.substring(h1.lastIndexOf('/'))
+    var h2 = fileUrl(file12).substring(8)
+    var h22 = h2.substring(h2.lastIndexOf('/'))
+    var h3 = fileUrl(file13).substring(8)
+    var h33 = h3.substring(h3.lastIndexOf('/'))
+    var file1 = dest + '/01. Client/01-Enquiry/' + h11
+    var file2 = dest + '/04. Vendor/01-BOM/' + h22
+    var file3 = dest + '/04. Vendor/02-Pre Order Quotations/' + h33
+    console.log('COPYING FILE_____')
+    ncp(h1, file1, function (err) {
+      if (err) {
+        return console.log(err)
+      }
+    })
+    ncp(h2, file2, function (err) {
+      if (err) {
+        return console.log(err)
+      }
+    })
+    ncp(h3, file3, function (err) {
+      if (err) {
+        return console.log(err)
+      }
+    })
+    resolve('yes file uploaded successfully')
   })
-  var storage1 = multer.diskStorage({
-    destination: function (req, file, callback) {
-      callback(null, file2)
-    }
-  })
-  var storage2 = multer.diskStorage({
-    destination: function (req, file, callback) {
-      callback(null, file3)
-    }
-  })
-  var upload = multer({ storage: storage }).array('originalname')
-  var upload1 = multer({ storage: storage1 }).array('originalname')
-  var upload2 = multer({ storage: storage2 }).array('originalname')
-  upload(file[0], function (err) {
-    if (err) {
-      return ('error file not uploaded')
-    }
-  })
-  upload1(file[0], function (err) {
-    if (err) {
-      return ('error file not uploaded')
-    }
-  })
-  upload2(file[0], function (err) {
-    if (err) {
-      return ('error file not uploaded')
-    }
-  })
-  return 1
 }
 export {
   createDir,

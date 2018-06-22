@@ -1,7 +1,7 @@
 
 <div>
 <div id="form" >
-  <form v-on:submit.prevent="onSubmit"  class="container">
+  <form enctype='multipart/form-data' v-on:submit.prevent="onSubmit"  class="container" action = '/assign' method='post'>
   <p style="margin:1%;align-items:center;justify-content:center;display:flex"><b>FORM1 ENQUIRY HANDLING</b></p>
 <hr>
     <div class='row'>
@@ -130,7 +130,7 @@
 <label><strong>VENDOR QUOTE</strong></label>
 </div>
 <div class='col-75'>
-<input type="file">
+<input type="file" id="vendor">
 </div>
 </div>
 <hr>
