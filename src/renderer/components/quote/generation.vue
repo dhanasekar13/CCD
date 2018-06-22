@@ -35,3 +35,4 @@ export default {
   }
 }
 </script>
+<style src='./generation.css'></style>

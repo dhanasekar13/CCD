@@ -1,8 +1,8 @@
 import { enquiryProject, enquiryTrading } from '@/components/database/validate'
 var fs = require('fs-extra')
 var fileUrl = require('file-url')
-var sourcefiledir = 'H:/ccd_technologies/template'
-var destinationdir = 'H:/ccd_technologies/project/'
+var sourcefiledir = 'F:/folder/template'
+var destinationdir = 'F:/folder/from template/'
 var ncp = require('ncp').ncp
 function createDir (data, file) {
   return new Promise(function (resolve, reject) {

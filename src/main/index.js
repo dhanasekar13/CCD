@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
-
+var remote = require('remote')
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -94,8 +94,25 @@ var menu1 = [
     }
   },
   {
+    label: 'TOOLS',
+    submenu: [{
+      label: 'REFRESH',
+      click () {
+        remote.getCurrentWindow().reload()
+      }
+    }]
+  },
+  {
+    label: 'LOGIN (MAIN PAGE)',
+    click () {
+      let winURL = 'http://localhost:9080/#/login'
+      mainWindow.loadURL(winURL)
+    }
+  },
+  {
     label: 'EXIT',
     click () {
+      app.quit()
     }
   }
 ]

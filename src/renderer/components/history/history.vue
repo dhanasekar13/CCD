@@ -2,7 +2,7 @@
 </template>
 
 <script>
-import { queryExec, mysql } from '@/components/database/dbConnection'
+import { queryExec, mysql, insertRecord } from '@/components/database/dbConnection'
 const storage = require('electron-json-storage')
 export default {
   data () {
@@ -60,11 +60,66 @@ export default {
         }
       })
     },
+    update: function (data) {
+      console.log(data)
+      console.log(data.revison)
+      var query = 'update `assignenquiry` set `quote` = 1  where refno = ' + mysql.escape(data.refno) + ' and revison = ' + mysql.escape(data.revison)
+      console.log(query)
+      var values = queryExec(query)
+      values.then(function (data) {
+        alert('refresh the page to work the changes')
+      })
+    },
+    insertrevision: function (data, data1) {
+      var fulldetail = data
+      var current = this
+      var enquiryregister = {
+        Type: data.Type,
+        RefNo: data.RefNo,
+        Revision: data1,
+        Responsibility: data.Responsibility,
+        CName: data.CName,
+        Mode: data.Mode,
+        EnqDate: data.EnqDate,
+        DueDate: data.DueDate
+      }
+      console.log(enquiryregister)
+      var insertedarenot = insertRecord('projectenquiryregsiter', enquiryregister)
+      insertedarenot.then(function (data) {
+        console.log(data)
+        current.update(fulldetail)
+      })
+      var assignenquirytb = {
+        mode: data.mode,
+        clientName: data.clientName,
+        duedate: data.duedate,
+        followup: data.followup,
+        assgnerId: data.assgnerId,
+        assEngineerId: data.assEngineerId,
+        refno: data.refno,
+        revison: data1
+      }
+      console.log(assignenquirytb)
+      var insertedarenot1 = insertRecord('assignenquiry', assignenquirytb)
+      insertedarenot1.then(function (data) {
+        console.log(data)
+        current.update(fulldetail)
+      })
+    },
     createquote (data) {
-      console.log('created revisoin for 1 record ' + data[0].revison)
+      console.log(data)
+      var current = this
+      var r = 'R' + (parseInt(data[data.length - 1].revison.substring(1)) + 1)
+      console.log(r)
+      console.log('created revisoin for 1 record ' + r)
+      current.insertrevision(data[data.length - 1], r)
     },
     createquote1 (data) {
+      var current = this
       console.log('created revision for more record')
+      var r = 'R' + (parseInt(data[data.length - 1].revison.substring(1)) + 1)
+      console.log(r)
+      current.insertrevision(data[data.length - 1], r)
     },
     onload: function () {
       var current = this

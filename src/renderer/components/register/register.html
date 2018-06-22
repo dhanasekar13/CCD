@@ -1,53 +1,100 @@
 <div>
-<div>
-<form>
-<div >
-  <select name="">
+<div id='wrapper'>
+<form v-on:submit.prevent="submit()">
+<div id="a1" >
+  <div align='center' >
+  <label><strong>Select the quoted are not quoted</strong></label>
+</div>
+<div id="a">
+  <select name="" v-model="quote">
     <option value="1">QUOTED</option>
     <option value="0">NOT QUOTED</option>
   </select>
 </div>
-<div>
-  <label>Project id</label>
-  <select name="">
-    <option value="1">QUOTED</option>
+</div><br><hr>
+<div class='row'>
+  <div class='col-25'>
+  <label><h4>Project id</h4></label>
+</div><div class='col-75'>
+  <select v-model="reg">
+    <option v-for='quo in quotesavailable' v-bind:value='quo'>{{quo['refno']}}</option>
   </select>
-  <input type="text" name="" value="">
 </div>
-<div>
-  <label>project details</label>
-  <input type="text" name="" value="">
+</div><br>
+<div class='row'>
+  <div class='col-25'>
+    <label><h4>Revision</h4></label>
+  </div>
+  <div class='col-75'>
+  <input type="text" v-bind:value="reg['revison']">
 </div>
-  <div>
-    <label>Client Name</label>
-    <input type="text" name="" value="">
+</div><br>
+<div class='row'>
+  <div class='col-25'>
+  <label><h4>project details</h4></label>
+</div>
+<div class='col-75'>
+  <input type="text" v-model="pdetails">
+</div>
+</div><br>
+  <div class='row'>
+  <div class='col-25'>
+    <label><h4>Client Name</h4></label>
   </div>
-  <div>
-    <label>Contact Person</label>
-    <input type="text" name="" value="">
+  <div class='col-75'>
+    <input type="text" v-model='pcname' required>
   </div>
-  <div>
-    <label>Contact No</label>
-    <input type="text" name="" value="">
+</div><br>
+<div class='row'>
+  <div class='col-25'>
+    <label><h4>Contact Person</h4></label>
   </div>
-  <div>
-    <label>Email id</label>
-    <input type="text" name="" value="">
+  <div class='col-75'>
+    <input type="text" v-model='cperson' required>
   </div>
-  <div >
-    <label>Assigned Engineer</label>
-    <input type="text" name="" value="">
+</div><br>
+<div class='row'>
+  <div class='col-25'>
+    <label><h4>Contact No</h4></label>
   </div>
-  <div >
-    <label>Mode of Enquiry</label>
-    <input type="text" name="" value="">
+  <div class='col-75'>
+    <input type="text" v-model='cno'>
   </div>
-  <div>
-    <label>Follow UP Frequency</label>
-    <input type="text" name="" value="">
+</div><br>
+<div class='row'>
+  <div class='col-25'>
+    <label><h4>Email id</h4></label>
   </div>
-  <div>
-    <input type="submit" name="" value="REGISTER ENQUIRY">
+  <div class='col-75'>
+    <input type="text" v-model="email">
+  </div>
+</div><br>
+  <div class='row'>
+    <div class='col-25'>
+    <label><h4>Assigned Engineer</h4></label>
+  </div>
+<div class='col-75'>
+    <input type="text" v-model='aeng' readonly>
+  </div>
+</div><br>
+  <div class='row'>
+    <div class='col-25'>
+    <label><h4>Mode of Enquiry</h4></label>
+  </div>
+  <div class='col-75'>
+    <input type="text" v-model='menq' readonly>
+  </div>
+</div><br>
+  <div class='row'>
+    <div class='col-25'>
+    <label><h4>Follow UP Frequency</h4></label>
+</div>
+<div class='col-75'>
+    <input type="text" v-model='freq' readonly>
+  </div>
+</div><br><hr>
+  <div id='base'>
+    <input type="submit" value="REGISTER ENQUIRY">
   </div>
 </form>
 </div>

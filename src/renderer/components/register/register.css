@@ -1,0 +1,31 @@
+#wrapper {
+  width:50%;
+  margin:25%;
+  margin-top:5%;
+  margin-left:30%;
+}
+#a1 {
+  width:100%
+}
+#a {
+  width: 100%
+}
+#a select {
+  width:100%
+}
+.row {
+  width:97%
+}
+.col-25,.col-75 {
+  width:45%;
+  display:inline-block
+}
+.col-75 select {
+  width:100%
+}
+h4 {
+  display:inline
+}
+#base input {
+  width:100%
+}
