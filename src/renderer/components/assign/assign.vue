@@ -64,11 +64,32 @@ export default {
       document.getElementById('vendor').value = ''
     },
     assign () {
-      var file1 = document.getElementById('client').files[0].path
-      var file2 = document.getElementById('boq').files[0].path
-      var file3 = document.getElementById('vendor').files[0].path
+      var file1
+      if (document.getElementById('client').files[0] === undefined) {
+        file1 = 'k:/dummy/a.txt'
+      } else {
+        file1 = document.getElementById('client').files[0].path
+      }
+      var file2
+      if (document.getElementById('boq').files[0] === undefined) {
+        file2 = 'k:/dummy/a.txt'
+      } else {
+        file2 = document.getElementById('boq').files[0].path
+      }
+      var file3
+      if (document.getElementById('vendor').files[0] === undefined) {
+        file3 = 'k:/dummy/a.txt'
+      } else {
+        file3 = document.getElementById('vendor').files[0].path
+      }
+      var file4
+      if (document.getElementById('other').files[0] === undefined) {
+        file4 = 'k:/dummy/a.txt'
+      } else {
+        file4 = document.getElementById('other').files[0].path
+      }
       var current = this
-      var file = [file1, file2, file3]
+      var file = [file1, file2, file3, file4]
       console.log(current.full)
       var createdre = createDir(current.full, file)
       createdre.then(function (data) {

@@ -1,27 +1,29 @@
 <template>
+
 <div id="all">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <div id="one" align="center">
 <p align='center'><strong>CCD TECHNICAL SALES APPLICATION</strong></p>
   </div>
   <div id="wrapper">
   <form>
   <div class="two">
-    <div><label><strong>Employee Id   -   :</strong></label></div>
-    <div><input type="text" v-model="id"><br></div>
+    <div><label class="font-weight-bold"><strong>Employee Id   -   :</strong></label></div>
+    <div><input type="text" class="form-control" v-model="id"></div>
   </div>
 <br>
   <div class="two">
     <div><label><strong>Password   -  :</strong></label></div>
-    <div><input type="password" v-model="pass"></div><br>
+    <div><input type="password" class="form-control" v-model="pass"></div>
     </div>
     <br>
     <div class="two">
     <div><label><strong>Period    -   :</strong></label></div>
-    <div><input type="text" v-model="period"></div><br>
+    <div><input type="text" class="form-control" v-model="period"></div>
     </div>
-    <br><br>
+    <br>
     <div class="two">
-    <input type="submit" value="................................................SUBMIT..............................................." v-on:click="submit()">
+    <input class="btn btn-secondary" type="submit" value="SUBMIT" v-on:click="submit()">
     </div>
   </form>
   </div>

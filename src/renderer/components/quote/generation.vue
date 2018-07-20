@@ -9,11 +9,9 @@ export default {
   },
   methods: {
     hit: function () {
-      var length = document.getElementsByClassName('a1').length
-      for (var i = 0; i < length; i++) {
-        document.getElementsByClassName('a1')[i].style.display = 'none'
-        document.getElementsByClassName('a2')[i].style.display = 'none'
-      }
+      console.log('hey')
+      document.getElementsByClassName('remove').base.style.display = 'none'
+      console.log(print())
     },
     addRow: function () {
       // var elem = document.createElement('tr');

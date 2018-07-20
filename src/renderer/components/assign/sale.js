@@ -30,7 +30,8 @@ function createDir (data, file) {
     var g1 = file[0]
     var g2 = file[1]
     var g3 = file[2]
-    resolve(createwin(fullname, g1, g2, g3))
+    var g4 = file[3]
+    resolve(createwin(fullname, g1, g2, g3, g4))
   })
 }
 function type (data) {
@@ -69,7 +70,7 @@ function type (data) {
     }
   })
 }
-function createwin (dest, file11, file12, file13) {
+function createwin (dest, file11, file12, file13, file14) {
   return new Promise(function (resolve, reject) {
     var h1 = fileUrl(file11).substring(8)
     var h11 = h1.substring(h1.lastIndexOf('/'))
@@ -77,24 +78,29 @@ function createwin (dest, file11, file12, file13) {
     var h22 = h2.substring(h2.lastIndexOf('/'))
     var h3 = fileUrl(file13).substring(8)
     var h33 = h3.substring(h3.lastIndexOf('/'))
+    var h4 = fileUrl(file14).substring(8)
+    var h44 = h4.substring(h4.lastIndexOf('/'))
     var file1 = dest + '/01. Client/01-Enquiry/' + h11
     var file2 = dest + '/04. Vendor/01-BOM/' + h22
     var file3 = dest + '/04. Vendor/02-Pre Order Quotations/' + h33
+    var file4 = dest + '/other_file/' + h44
     console.log('COPYING FILE_____')
-    resolve(ncp1(h1, file1, h2, file2, h3, file3))
+    resolve(ncp1(h1, file1, h2, file2, h3, file3, h4, file4))
   })
 }
 function ncpfunt (arg, arg1) {
   return new Promise(function (resolve, reject) {
     ncp(arg, arg1, function (err) {
       if (err) {
-        return console.log(err)
+        console.log(err)
+        resolve('1')
+      } else {
+        resolve('okay')
       }
-      resolve('okay')
     })
   })
 }
-function ncp1 (h1, file1, h2, file2, h3, file3) {
+function ncp1 (h1, file1, h2, file2, h3, file3, h4, file4) {
   return new Promise(function (resolve, reject) {
     var first = ncpfunt(h1, file1)
     first.then(function (data) {
@@ -102,7 +108,10 @@ function ncp1 (h1, file1, h2, file2, h3, file3) {
       second.then(function (data) {
         var third = ncpfunt(h3, file3)
         third.then(function (data) {
-          resolve('uploaded successfully')
+          var fourth = ncpfunt(h4, file4)
+          fourth.then(function (data) {
+            resolve('uploaded successfully')
+          })
         })
       })
     })

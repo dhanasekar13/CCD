@@ -1,18 +1,19 @@
 
-<div>
+<div class='whole'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 <div id="form" >
   <form enctype='multipart/form-data' v-on:submit.prevent="onSubmit"  class="container" action = '/assign' method='post'>
   <p style="margin:1%;align-items:center;justify-content:center;display:flex"><b>FORM1 ENQUIRY HANDLING</b></p>
 <hr>
     <div class='row'>
      <div class="col-25">
-    <label><strong>Mode of Enquiry</strong></label>
+    <label><strong>Mode Of Enquiry</strong></label>
   </div>
   <div class="col-75">
     <select v-model="full.mode">
       <option value="Tender">TENDER</option>
       <option value="Project">PROJECT</option>
-    </select><br>
+    </select>
   </div>
   </div>
   <div class="row">
@@ -23,7 +24,7 @@
   <select v-model="full.cust">
     <option value=0>NEW</option>
     <option value=1>EXISTING</option>
-  </select><br>
+  </select>
   </div>
   </div>
   <div class="row" >
@@ -41,7 +42,7 @@
 </div>
 <div class="row">
   <div class="col-25">
-  <label><strong>PROJECT detail</strong></label>
+  <label><strong>Project Detail</strong></label>
 </div>
 <div class='col-75'>
   <input type="text" v-model="full.detail">
@@ -54,7 +55,7 @@
 <div class="col-75">
 <select v-model="ptype">
   <option value='S'>Trading</option>
-  <option value='P'>project</option>
+  <option value='P'>Project</option>
 </select><br>
 </div>
 </div>
@@ -68,7 +69,7 @@
 </div>
 <div class='row'>
   <div class="col-25">
-  <label><strong>REVISION Number</strong></label>
+  <label><strong>Revision Number</strong></label>
 </div>
   <div class="col-75">
     <input type="text" readonly v-model="full.revno">
@@ -95,7 +96,7 @@
 </div>
   <div class="row">
     <div class="col-25">
-    <label><strong>Follow up Frequency</strong></label>
+    <label><strong>Follow Up Frequency</strong></label>
   </div>
   <div class="col-75">
     <select v-model="full.follow">
@@ -103,17 +104,16 @@
       <option value="Once a Day">Once a Day</option>
       <option value="Twice a Week">Twice a Week</option>
       <option value="Once a Week">Once a Week</option>
-    </select><br>
+    </select>
   </div>
 </div>
-<hr>
 <label style="margin-left:40%"><strong>FILE UPLOAD</strong></label>
   <div class='row'>
     <div class='col-25'>
   <label><strong>Client Correspondence</strong></label>
 </div>
 <div class='col-75'>
-<input type="file" id="client">
+<input class="btn btn-outline-secondary" type="file" id="client">
 </div>
 </div>
 
@@ -122,7 +122,7 @@
 <label><strong>BOQ</strong></label>
 </div>
 <div class='col-75'>
-<input type="file" id="boq">
+<input class="btn btn-outline-secondary" type="file" id="boq">
 </div>
 </div>
 <div class='row'>
@@ -130,10 +130,18 @@
 <label><strong>VENDOR QUOTE</strong></label>
 </div>
 <div class='col-75'>
-<input type="file" id="vendor">
+<input class="btn btn-outline-secondary" type="file" id="vendor">
 </div>
 </div>
-<hr>
+
+<div class='row'>
+  <div class='col-25'>
+<label><strong>Other Upload</strong></label>
+</div>
+<div class='col-75'>
+<input class="btn btn-outline-secondary" type="file" id="other">
+</div>
+</div>
 <div id="last">
   <div>
 <input type="submit" class="col-50" name="button" id='btn10' value="Assign Enquiry" v-on:click.prevent="assign()">

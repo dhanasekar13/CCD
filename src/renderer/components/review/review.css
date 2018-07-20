@@ -1,0 +1,48 @@
+.common {
+width:100%;
+border:0;
+}
+#wrapper {
+  font-style:normal
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+.cell {
+  overflow:visible;
+
+}
+input[type='text'] {
+  width:100%;
+  border:0
+}
+.header div {
+  width:30%;
+  display:inline-block;
+}
+.header img {
+  width:160px;;
+  margin-right:10
+}
+#h2 {
+  margin-left: 5%
+}
+#h3 p {
+  margin-left:11%;
+  display:inline
+}
+textarea {
+  display:block;
+  border:0
+}
+input {
+  border:0;
+  width:100%
+}
+img {
+  width:40%;
+  display:inline;
+}

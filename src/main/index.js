@@ -1,7 +1,8 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, Menu } from 'electron'
-var remote = require('remote')
+var remote = require('electron')
+var path = require('path')
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -15,6 +16,17 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080/#/login`
   : `file://${__dirname}/index.html`
 
+app.setUserTasks([
+  {
+    program: process.execPath,
+    arguments: '--new-window',
+    iconPath: process.execPath,
+    iconIndex: 0,
+    title: 'CCD TECHNICAL',
+    description: 'SALES APPLICATION'
+  }
+])
+app.setUserTasks([])
 function createWindow () {
   /**
    * Initial window options
@@ -22,7 +34,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000
+    width: 1000,
+    icon: path.join(__dirname, 'assets/cmpy.png')
   })
 
   mainWindow.loadURL(winURL)

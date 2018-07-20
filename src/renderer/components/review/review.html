@@ -1,78 +1,964 @@
 <div>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<div>
+<div id='wrapper'>
   <div class="header">
-    <div class="">
-      <img src="src\renderer\assets\cmpy.png" alt="">
+    <div class="" align='left' style='margin-right:3%'>
+      <img src="src\renderer\assets\cmpy1.jpg" alt="">
     </div>
-    <div class="">
-      <h2>ENQUIRY / OFFER REVIEW</h2>
+    <div id='h2' align='center'>
+      <h3>ENQUIRY / OFFER REVIEW</h3>
     </div>
-    <div class="">
-
+    <div id=h3>
+<p><strong>Format No. : MKG-001</strong></p><br>
+<p> <strong>Revision No. : 00</strong> </p><br>
+<p> <strong> Date : 02.11.2012</strong> </p>
     </div>
   </div>
-  <hr>
+
   <div>
   <table class="table" border=1>
          <thead>
 
        <th><strong>Offer No.</strong></th>
-                 <th><strong>Revision & Date</strong></th>
+                 <th><strong>Revi. & Date</strong></th>
                  <th><strong>Tentative Contractual Start Date</strong></th>
                  <th><strong>Contractual Completion Date</strong></th>
          </thead>
 
          <tbody>
            <tr>
-             <td> <input type="text" name="" value=""> </td><td> <div class="">
-
-             </div> </td><td> <div class="">
-
-             </div> </td><td> <div class="">
-
-             </div> </td>
+             <td> <input type="text" name="" value=""> </td>
+             <td> <input type="text" name="" value=""> </td>
+               <td> <input type="date" name="" value=""> </td>
+             <td> <input type="date" name="" value=""> </td>
            </tr>
              <tr>
                 <td> <strong>Project :</strong> </td>
-                 <td> </td>
+                 <td class='td1' colspan='3'> <input type="text" name="" value="" > </td>
              </tr>
              <tr>
                 <td> <strong>Client / Consultant :</strong> </td>
-                 <td> </td>
+                 <td colspan='3'> <input type="text" name="" value=""> </td>
              </tr>
              <tr>
                 <td> <strong>End User  :</strong> </td>
-                 <td> </td>
+                 <td colspan='3'> <input type="text" name="" value=""> </td>
              </tr>
              <tr>
                 <td> <strong>Type:</strong> </td>
-                 <td> </td>
-                 <td><strong>Value:</strong></td>
+                 <td colspan='2'> <textarea name="name" rows="2" cols="36" ></textarea> </td>
+                 <td align=center><strong>Value</strong><input type="text" name="" value=""> </td>
              </tr>
          </tbody>
      </table>
    </div>
    <div class="">
-     <table class="table" border = 1>
+     <table class="table" border=1>
             <thead>
 
-          <th><strong>S.No .</strong></th>
+          <th><strong>S.No.</strong></th>
                     <th><strong>Item Description</strong></th>
-                    <th><strong>Scopep</strong></th>
+                    <th><strong>Scope</strong></th>
                     <th><strong>Remarks</strong></th>
             </thead>
 
             <tbody>
-                <tr v-for="(row, index) in rows">
-          <td><label>{{index}}</label> </td>
-                    <td><input type="text" v-model="row.hsn"></td>
-                    <td><input type="text" v-model="row.description"></td>
-                    <td><input type="text" v-model="row.qty"></td>
-                    <td> <input type="text" v-model="row.unit"> </td>
-                    <td> <input type="text" v-model="row.amount"> </td>
-                    <td> <a  v-on:click="removeElement(index);" style="cursor: pointer">Remove</a>
+              <tr>
+                <td><label><strong>1</strong></label> </td>
+                  <td> <label> <strong>Engineering</strong> </label> </td>
+                  <td>  </td>
+                  <td></td>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Basic Engineering</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Shop Floor Drawing</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+              </tr>
+
+              <tr>
+                <td><label><strong>2</strong></label> </td>
+                  <td> <label><strong> Site Establishments</strong></label> </td>
+                  <td> </td>
+                  <td></td>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Site Location</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Site Office</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Storage Yard / Facility</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Fabrication Yard</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Labour Accomodation</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Painting Yard</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+              </tr>
+              <tr>
+                <td><label><strong>3</strong></label> </td>
+                  <td> <label> <strong>Civil Works</strong> </label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+
+              <tr>
+                <td><label><strong>4</strong></label> </td>
+                  <td> <label> <strong>Materials</strong> </label> </td>
+                  <td></td>
+                  <td></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Free Issue Materials list</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Clamps & Supports</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+
+              <tr>
+                <td><label><strong>5</strong></label> </td>
+                  <td> <label> <strong>Consumables</strong> </label> </td>
+                  <td>   </td>
+                  <td> </td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Electricity</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Water</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Compressed Air</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Testing Medium</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Electrode</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Cutting Tools</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Free Issue Materials List</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong>6</strong></label> </td>
+                  <td> <label> <strong>Material Handling</strong> </label> </td>
+                  <td>  </td>
+                  <td> </td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Site Transport</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label> Material handling</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong>7</strong></label> </td>
+                  <td> <label> <strong>Scaffolding Items</strong> </label> </td>
+                  <td>  </td>
+                  <td> </td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>A - Type Ladder</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Pipe Scaffolding</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Portable Scaffolding</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong>8</strong></label> </td>
+                  <td> <label> <strong>Machineries & Equipments</strong> </label> </td>
+                  <td>  </td>
+                  <td> </td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Orbital Welding M/c</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Tig Welding M / C</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Arc Welding M/C</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Swaging M/C</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Squarring M/c</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Beveling M/C</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong>9</strong></label> </td>
+                  <td> <label> <strong>Testing</strong> </label> </td>
+                  <td> <input type="text"> </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>QC Documentation</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
                 </td>
-                </tr>
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>NDT Testing Cost</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Pneumatic Test</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Helium Leak Test</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>DPT</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>RT</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+              <tr>
+                <td><label><strong></strong></label> </td>
+                  <td> <label>Third Party Inspection</label> </td>
+                  <td>
+                    <select class="common" name="">
+                      <option value=""></option>
+                      <option value="CCD">CCD</option>
+                      <option value="Client">Client</option>
+                      <option value="N/A">N/A</option>
+                    </select>
+                  </td>
+                  <td><input type="text" ></td>
+
+              </tr>
+
+                              <tr>
+                                <td><label><strong>10</strong></label> </td>
+                                  <td> <label> <strong>SAFETY</strong> </label> </td>
+                                  <td> <input type="text"> </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Safety Implimentation Level</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Safety / QC stewards</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong>11</strong></label> </td>
+                                  <td> <label> <strong>Client Coordination</strong> </label> </td>
+                                  <td> <input type="text"> </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Work Permit / Gate Pass</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong>12</strong></label> </td>
+                                  <td> <label> <strong>Final Documentation</strong> </label> </td>
+                                  <td> <input type="text"> </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>As Built Drawing</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+                              </tr>
+                              <tr>
+                                <td><label><strong>13</strong></label> </td>
+                                  <td> <label> <strong>Tender Documentation</strong> </label> </td>
+                                  <td> <input type="text"> </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Vendor list (Approved Make list)</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Data Sheet References</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Technical Specification</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong>14</strong></label> </td>
+                                  <td> <label> <strong>Commercial Implications</strong> </label> </td>
+                                  <td> <input type="text"> </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Duration Of Work</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Manpower Calculation</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Reference Of The Old Project Costs</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Payment Terms</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Insurance </label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Transport</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Taxes</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Order In Favour</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Validity</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong></strong></label> </td>
+                                  <td> <label>Warranty</label> </td>
+                                  <td>
+                                    <select class="common" name="">
+                                      <option value=""></option>
+                                      <option value="CCD">CCD</option>
+                                      <option value="Client">Client</option>
+                                      <option value="N/A">N/A</option>
+                                    </select>
+                                  </td>
+                                  <td><input type="text" ></td>
+
+                              </tr>
+                              <tr>
+                                <td><label><strong>15</strong></label> </td>
+                                  <td class='cell' colspan='3' align='center'><label> <strong>Contact Details</strong> </label>
+                                    </td>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td colspan='3'>
+                                  <textarea name="name" rows="4" cols="80"></textarea>
+                                </td>
+                              </tr>
+                              <tr>
+
+                                  <td colspan='2'> <label> <strong>Prepare By</strong> </label> </td>
+
+                                  <td colspan='2'> <label> <strong>Checked By</strong> </label></td>
+
+                              </tr>
+                              <tr>
+                                <td colspan='2' >
+                                  <img v-if='sel' src="https://cdn.pixabay.com/photo/2018/03/11/20/42/mammals-3218028__340.jpg" alt="">
+                                  <img v-else src="https://cdn.pixabay.com/photo/2018/06/26/18/42/storm-clouds-3499982__340.jpg" alt="">
+                                 <select  class="common" name="" v-model='sel'>
+                                      <option value=0> ONE</option>
+                                      <option  value=1>TWO </option>
+                                    </select>
+                                   </td>
+
+                                  <td colspan='2'>
+                                    <img v-if='app' src="https://cdn.pixabay.com/photo/2018/03/11/20/42/mammals-3218028__340.jpg" alt="">
+                                    <img v-else src="https://cdn.pixabay.com/photo/2018/06/26/18/42/storm-clouds-3499982__340.jpg" alt="">
+                                     <select  class="common" name="" v-model='app'>
+                                        <option value=0> ONE</option>
+                                        <option  value=1>TWO </option>
+                                      </select>
+                                  </td>
+
+                              </tr>
+                              <tr>
+                                 <td colspan='2'> <label> <strong>Enquiry Reviewed</strong> </label> </td>
+                                <td colspan='2' >
+                                   <select class="common" name="">
+                                    <option value=""></option>
+                                    <option value="">FEASIBLE</option>
+                                    <option value="">NOT FEASIBLE</option>
+
+                                  </select>
+
+                                </td>
+                              </tr>
+
             </tbody>
         </table>
+        <div class="">
+          <div class="hide">
+            <button id="btn5" type="button" v-on:click="pdf()" class='btn btn-primary btn-lg btn-block' name="button">PRINT | SAVE THE FILE </button>
+          </div>
+          <div class="">
+
+          </div>
+        </div>
    </div>
+</div>
+
+		</div>
+    <div class="">
+
+    </div>
 </div>

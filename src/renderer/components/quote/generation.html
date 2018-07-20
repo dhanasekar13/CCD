@@ -1,4 +1,5 @@
 <div >
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 <div id=wrapper>
   <header >
 
@@ -6,7 +7,7 @@
     <img src="src\renderer\assets\cmpy.png" alt="ccd logo">
 </div>
 <div id='h2'>
-   <p><strong>ccd technical solutions</strong></p>
+   <p><strong>CCD TECHNICAL SOLUTION</strong></p>
 </div>
   </header>
 
@@ -27,7 +28,7 @@
         <input type="text" >
       </div>
         <div class='col-25'>
-      <label><strong>Page :</strong></label>
+      <label><strong>PAGE :</strong></label>
     </div>
     <div class='col-75'>
         <input type="text" name="" value="">
@@ -36,13 +37,13 @@
 
       <div class="row">
         <div class='col-25'>
-        <label>Date : </label>
+        <label>DATE : </label>
       </div>
       <div class='col-75'>
         <input type="text" >
       </div>
       <div class='col-25'>
-        <label>Contact :</label>
+        <label>CONTACT :</label>
       </div>
       <div class='col-75'>
         <input type="text" name="" value="">
@@ -67,36 +68,47 @@
   </div>
 <br>
   <div id="app">
-    <table class="table">
+    <table class="table" border=0>
            <thead>
 
-         <th><strong>Pos.</strong></th>
+         <th><strong>POS..</strong></th>
                    <th><strong>HSN / SAC</strong></th>
-                   <th><strong>Description</strong></th>
-                   <th><strong>Qty UOM</strong></th>
-                   <th> <strong>Unit Price</strong> </th>
-                   <th> <strong>Amount</strong> </th>
+                   <th><strong>DESCRIPTION</strong></th>
+                   <th><strong>QTY</strong></th>
+                   <th> <strong>UOM</strong> </th>
+                   <th> <strong>UNIT PRICE</strong> </th>
+                   <th> <strong>AMOUNT</strong> </th>
 
            </thead>
-           <hr>
-           <tbody>
-               <tr v-for="(row, index) in rows">
+
+           <tbody align='center'>
+               <tr v-for="(row, index) in rows" align='center'>
          <td><label>{{index}}</label> </td>
-                   <td><input type="text" v-model="row.hsn"></td>
-                   <td><input type="text" v-model="row.description"></td>
-                   <td><input type="text" v-model="row.qty"></td>
+                   <td ><input type="text" v-model="row.hsn"></td>
+                   <td> <input type="text" name="" value="">
+                      <textarea name="name" rows="4" cols="40"></textarea> </td>
+                   <td><input type="text"v-model="row.qty"></td>
+                   <td> <input type="text" > </td>
                    <td> <input type="text" v-model="row.unit"> </td>
-                   <td> <input type="text" v-model="row.amount"> </td>
-                   <td> <a  v-on:click="removeElement(index);" style="cursor: pointer">Remove</a>
+                   <td> <label> <strong> {{(parseFloat(parseFloat(row.unit) * parseFloat(row.qty))).toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,")}} </strong> </label> </td>
+                  <td > <a class="remove"  v-on:click="removeElement(index);" style="cursor: pointer">Remove</a>
                </td>
                </tr>
            </tbody>
        </table>
        <hr>
-       <div id='base'>
-           <button class="button btn-primary" @click="addRow">Add row</button>
-     <input class="a2" type="submit" @click="hit" value="submitted button">
+       <div id='base'class='remove'>
+           <button  class="btn btn-primary btn-lg" @click="addRow">Add Row</button>
+     <input class="btn btn-secondary btn-lg" type="submit" @click="hit" value="SUBMIT">
        </div>
     </div>
+  <div class="footer1">
+    <div class="">
+
+    </div>
+    <div class="">
+
+    </div>
+  </div>
 </div>
 </div>
